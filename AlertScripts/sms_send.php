@@ -4,7 +4,7 @@ header("Content-Type: text/xml; charset=UTF-8");
 Include('QTSMS.class.php');
 $sms= new QTSMS();
 
-$sender_name='SUNLIGHT';
+$sender_name='';
 $period=600;
 $post_id_sms=time();
 
