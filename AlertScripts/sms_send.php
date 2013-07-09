@@ -15,11 +15,8 @@ $message=$argv[3];
 $logfilelocation = "/var/log/zabbix/sms/";
 // if debug is true, log files will be generated
 $debug=true;
-//if (count($argv)<3) {
-//  die ("Usage: ".$argv[0]." recipientmobilenumber \"subject\" \"message\"\n");
-//}
 
-$result=$sms->post_message($message, $to, $sender_name, $post_id_sms, $period);
+$result=$sms->post_message($subject.": ".$message, $to, $sender_name, $post_id_sms, $period);
 
 if ( $debug )
   file_put_contents($logfilelocation."sms_alert_".date("Ymd"), "\n\n".$result, FILE_APPEND);
